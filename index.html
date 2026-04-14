@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pachmarhi Hill Hotel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: #f2f2f2;
+        }
+
+        header {
+            background: #e60023;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .slider {
+            position: relative;
+        }
+
+        .slides img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: none;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            padding: 10px;
+            background: black;
+            color: white;
+            cursor: pointer;
+        }
+
+        .prev { left: 10px; }
+        .next { right: 10px; }
+
+        .container {
+            padding: 15px;
+        }
+
+        .room {
+            background: white;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .room img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .room-details {
+            padding: 15px;
+        }
+
+        .price {
+            color: green;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .btn {
+            display: block;
+            text-align: center;
+            background: #25D366;
+            color: white;
+            padding: 12px;
+            margin-top: 10px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .call-btn {
+            display: block;
+            text-align: center;
+            background: blue;
+            color: white;
+            padding: 12px;
+            margin-top: 10px;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+
+        .gallery img {
+            width: 30%;
+            margin: 5px;
+            border-radius: 8px;
+        }
+
+        .note {
+            text-align: center;
+            background: yellow;
+            padding: 10px;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        iframe {
+            width: 100%;
+            height: 300px;
+            border: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Pachmarhi Hill Hotel</h1>
+    <p>Book your stay with us</p>
+</header>
+
+<!-- NOTICE -->
+<div class="note">
+    For more details or discount please WhatsApp or call 📞
+</div>
+
+<!-- SLIDER -->
+<div class="slider">
+    <div class="slides">
+        <img src="room1.jpg">
+        <img src="room2.jpg">
+        <img src="room3.jpg">
+        <img src="room4.jpg">
+        <img src="room5.jpg">
+        <img src="room6.jpg">
+        <img src="room7.jpg">
+    </div>
+
+    <span class="prev" onclick="changeSlide(-1)">❮</span>
+    <span class="next" onclick="changeSlide(1)">❯</span>
+</div>
+
+<div class="container">
+
+    <div class="room">
+        <img src="room1.jpg">
+        <div class="room-details">
+            <h2>Deluxe Room</h2>
+            <p class="price">₹1500 / night</p>
+            <a class="btn" href="https://wa.me/919755133807?text=I want to book Deluxe Room">WhatsApp Booking</a>
+            <a class="call-btn" href="tel:9755133807">Call Now</a>
+        </div>
+    </div>
+
+</div>
+
+<!-- GALLERY -->
+<div class="container">
+    <h2>Gallery</h2>
+    <div class="gallery">
+        <img src="room1.jpg">
+        <img src="room2.jpg">
+        <img src="room3.jpg">
+        <img src="room4.jpg">
+        <img src="room5.jpg">
+        <img src="room6.jpg">
+        <img src="room7.jpg">
+    </div>
+</div>
+
+<!-- GOOGLE MAP -->
+<div class="container">
+    <h2>Our Location</h2>
+    <iframe src="https://maps.google.com/maps?q=pachmarhi&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+</div>
+
+<!-- SCRIPT -->
+<script>
+let index = 0;
+const slides = document.querySelectorAll(".slides img");
+
+function showSlide() {
+    slides.forEach(img => img.style.display = "none");
+    slides[index].style.display = "block";
+}
+showSlide();
+
+function changeSlide(n) {
+    index += n;
+    if (index >= slides.length) index = 0;
+    if (index < 0) index = slides.length - 1;
+    showSlide();
+}
+</script>
+
+</body>
+</html>
